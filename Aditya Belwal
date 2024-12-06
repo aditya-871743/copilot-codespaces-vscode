@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string name;
+    int units;
+    cout << "ENTER THE NAME - ";
+    getline(cin, name);
+    cout << "ENTER THE NUMBER OF UNITS CONSUMED - ";
+    cin >> units;
+    double bill;
+    bill = 50;
+    if (units <= 100)
+    {
+        bill += .6 * units;
+    }
+    else if (units > 100 && units <= 300)
+    {
+        bill += 100 * .6 + (units - 200) * .8;
+    }
+    else if (units > 300)
+    {
+        bill += (100 * .6) + (200 * .8) + ((units - 300) * .9);
+    }
+    if (bill > 300)
+        bill += bill * .15;
+    cout << "NAME - " << name << endl
+         << "UNITS CONSUMED - " << units << endl
+         << "BILL - " << bill;
+}
+ 
+
+
